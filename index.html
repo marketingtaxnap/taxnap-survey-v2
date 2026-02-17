@@ -77,6 +77,14 @@
       background: linear-gradient(135deg, #fef3c7, #fde68a);
       border: 2px solid #f59e0b;
     }
+
+    .snappy-bounce {
+      animation: snappyBounce 2s ease-in-out infinite;
+    }
+    @keyframes snappyBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -98,13 +106,9 @@
     <!-- ========== INTRO ========== -->
     <div id="intro" class="step active">
       <div class="text-center mb-8">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-100 rounded-full mb-4">
-          <svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
-        </div>
+        <img src="snappy.png" alt="スナッピー" loading="eager" class="w-24 h-24 mx-auto mb-3 object-contain snappy-bounce">
         <h1 class="text-2xl font-bold text-gray-900 mb-2">2分で完了するアンケート</h1>
-        <p class="text-gray-500 text-sm leading-relaxed mb-4">
+        <p class="text-gray-500 text-sm leading-relaxed">
           タックスナップをもっと良くするため<br>率直なご意見を聞かせてください
         </p>
       </div>
@@ -689,11 +693,7 @@
     <!-- ========== COMPLETE ========== -->
     <div id="complete" class="step">
       <div class="text-center mb-6">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-100 rounded-full mb-4">
-          <svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-          </svg>
-        </div>
+        <img src="snappy.png" alt="スナッピー" loading="eager" class="w-20 h-20 mx-auto mb-3 object-contain snappy-bounce">
         <h2 class="text-2xl font-bold text-gray-900 mb-2">ありがとうございました！</h2>
         <p class="text-sm text-gray-500">ご回答を受け付けました</p>
       </div>
