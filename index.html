@@ -736,15 +736,6 @@
 
   <script>
     // ===== Get email from URL param =====
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlEmail = urlParams.get('email') || '';
-    // Pre-fill email input if available from URL param
-    window.addEventListener('DOMContentLoaded', () => {
-      if (urlEmail) {
-        document.getElementById('emailInput').value = urlEmail;
-        toggleSubmitBtn();
-      }
-    });
 
     // ===== State =====
     const answers = {
