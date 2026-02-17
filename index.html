@@ -115,7 +115,7 @@
           <div class="flex items-center gap-3">
             <span class="text-2xl">🎁</span>
             <div>
-              <p class="text-sm font-bold text-amber-900">回答者の中から抽選で10名様に</p>
+              <p class="text-sm font-bold text-amber-900">回答者の中から抽選で30名様に</p>
               <p class="text-xs text-amber-800 font-semibold">Amazonギフト券1,000円分をプレゼント</p>
             </div>
           </div>
@@ -199,41 +199,56 @@
       </div>
     </div>
 
-    <!-- ========== Q2: 確定申告の現在地 ========== -->
+    <!-- ========== Q2: チャネル ========== -->
     <div id="q2" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q2. 今年の確定申告、どうする予定ですか？</h2>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q2. タックスナップを何で知りましたか？</h2>
       <p class="text-sm text-gray-500 mb-6">一つ選んでください</p>
 
       <div class="space-y-3" id="q2Options">
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="タックスナップでやる予定" onclick="selectSingle('q2', this); showNext('q2Next')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="テレビCM" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
+          <span class="text-xl">📺</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">テレビCM</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="ラジオ・radiko・Spotify" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
+          <span class="text-xl">📻</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">ラジオ・radiko・Spotify</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="電車内広告" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
+          <span class="text-xl">🚃</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">電車内広告</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="YouTube・TVer" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
+          <span class="text-xl">▶️</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">YouTube・TVer</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="SNS" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
           <span class="text-xl">📱</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">タックスナップでやる予定</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">SNS（X・Instagram・Facebook・TikTokなど）</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="他のツール・サービスで進めている" onclick="selectSingle('q2', this); showNext('q2Next')">
-          <span class="text-xl">💻</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">他のツール・サービスで進めている（freee・マネーフォワード・弥生など）</span>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="ネット検索" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
+          <span class="text-xl">🔍</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">ネット検索</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="税理士に依頼している・依頼予定" onclick="selectSingle('q2', this); showNext('q2Next')">
-          <span class="text-xl">👔</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">税理士に依頼している・依頼予定</span>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="ニュース・記事・ブログ" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
+          <span class="text-xl">📰</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">ニュース・記事・ブログ</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="紙・e-Taxで自力でやる予定" onclick="selectSingle('q2', this); showNext('q2Next')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="知人の紹介" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
+          <span class="text-xl">🤝</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">知人の紹介</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="その他" onclick="selectSingle('q2_channel', this); showNext('q2Next')">
           <span class="text-xl">📝</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">紙（手書き）やe-Taxで自力でやる予定</span>
-          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
-        </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="何でやるかまだ決めていない" onclick="selectSingle('q2', this); showNext('q2Next')">
-          <span class="text-xl">🤷</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">何でやるかまだ決めていない</span>
-          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
-        </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="確定申告が必要かわからない・しない予定" onclick="selectSingle('q2', this); showNext('q2Next')">
-          <span class="text-xl">🤔</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">確定申告が必要かわからない・しない予定</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">その他</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
       </div>
@@ -245,31 +260,41 @@
       </div>
     </div>
 
-    <!-- ========== Q3: 登録モチベーション ========== -->
+    <!-- ========== Q3: 確定申告の現在地 ========== -->
     <div id="q3" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q3. タックスナップに登録した理由は？</h2>
-      <p class="text-sm text-gray-500 mb-6">一番近いものを一つ選んでください</p>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q3. 今年の確定申告、どうする予定ですか？</h2>
+      <p class="text-sm text-gray-500 mb-6">一つ選んでください</p>
 
       <div class="space-y-3" id="q3Options">
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="気になって登録した" onclick="selectSingle('q3', this); showNext('q3Next')">
-          <span class="text-xl">👀</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">気になったのでとりあえず登録してみた</span>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="タックスナップでやる予定" onclick="selectSingle('q3_status', this); showNext('q3Next')">
+          <span class="text-xl">📱</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">タックスナップでやる予定</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="比較検討で登録した" onclick="selectSingle('q3', this); showNext('q3Next')">
-          <span class="text-xl">⚖️</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">他のツールと比較するために登録した</span>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="他のツール・サービスで進めている" onclick="selectSingle('q3_status', this); showNext('q3Next')">
+          <span class="text-xl">💻</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">他のツール・サービスで進めている（freee・マネーフォワード・弥生など）</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="試してみたくて登録した" onclick="selectSingle('q3', this); showNext('q3Next')">
-          <span class="text-xl">✨</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">良さそうだったので試してみたくて登録した</span>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="税理士に依頼している・依頼予定" onclick="selectSingle('q3_status', this); showNext('q3Next')">
+          <span class="text-xl">👔</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">税理士に依頼している・依頼予定</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="使うつもりで登録した" onclick="selectSingle('q3', this); showNext('q3Next')">
-          <span class="text-xl">💪</span>
-          <span class="flex-1 text-sm font-medium text-gray-700">タックスナップで確定申告しようと思って登録した</span>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="紙・e-Taxで自力でやる予定" onclick="selectSingle('q3_status', this); showNext('q3Next')">
+          <span class="text-xl">📝</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">紙（手書き）やe-Taxで自力でやる予定</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="何でやるかまだ決めていない" onclick="selectSingle('q3_status', this); showNext('q3Next')">
+          <span class="text-xl">🤷</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">何でやるかまだ決めていない</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="確定申告が必要かわからない・しない予定" onclick="selectSingle('q3_status', this); showNext('q3Next')">
+          <span class="text-xl">🤔</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">確定申告が必要かわからない・しない予定</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
       </div>
@@ -281,13 +306,49 @@
       </div>
     </div>
 
-    <!-- ========== Q4: コアバリア ========== -->
+    <!-- ========== Q4: 登録モチベーション ========== -->
     <div id="q4" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q4. トライアルをまだ始めていない一番の理由は？</h2>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q4. タックスナップに登録した理由は？</h2>
       <p class="text-sm text-gray-500 mb-6">一番近いものを一つ選んでください</p>
 
       <div class="space-y-3" id="q4Options">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="気になって登録した" onclick="selectSingle('q4_motivation', this); showNext('q4Next')">
+          <span class="text-xl">👀</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">気になったのでとりあえず登録してみた</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="比較検討で登録した" onclick="selectSingle('q4_motivation', this); showNext('q4Next')">
+          <span class="text-xl">⚖️</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">他のツールと比較するために登録した</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="試してみたくて登録した" onclick="selectSingle('q4_motivation', this); showNext('q4Next')">
+          <span class="text-xl">✨</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">良さそうだったので試してみたくて登録した</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="使うつもりで登録した" onclick="selectSingle('q4_motivation', this); showNext('q4Next')">
+          <span class="text-xl">💪</span>
+          <span class="flex-1 text-sm font-medium text-gray-700">タックスナップで確定申告しようと思って登録した</span>
+          <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
+        </button>
+      </div>
+
+      <div id="q4Next" class="hidden mt-6">
+        <button onclick="goTo('q5')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
+          次へ
+        </button>
+      </div>
+    </div>
+
+    <!-- ========== Q5: コアバリア ========== -->
+    <div id="q5" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. トライアルをまだ始めていない一番の理由は？</h2>
+      <p class="text-sm text-gray-500 mb-6">一番近いものを一つ選んでください</p>
+
+      <div class="space-y-3" id="q5Options">
         <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="使う予定" onclick="selectBarrier(this)">
           <span class="text-xl">📅</span>
           <span class="flex-1 text-sm font-medium text-gray-700">使う予定だが、まだ確定申告に手をつけていない</span>
@@ -325,24 +386,24 @@
         </button>
       </div>
 
-      <div id="q4OtherInput" class="hidden mt-3">
-        <input type="text" id="q4OtherText" placeholder="理由を入力してください"
+      <div id="q5OtherInput" class="hidden mt-3">
+        <input type="text" id="q5OtherText" placeholder="理由を入力してください"
           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:border-brand-500 focus:outline-none">
       </div>
 
-      <div id="q4Next" class="hidden mt-6">
-        <button onclick="goToQ5()" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
+      <div id="q5Next" class="hidden mt-6">
+        <button onclick="goToQ6()" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
           次へ
         </button>
       </div>
     </div>
 
-    <!-- ========== Q5: バリア別深掘り ========== -->
+    <!-- ========== Q6: バリア別深掘り ========== -->
 
-    <!-- Q5-A: 使う予定（まだ手をつけていない） -->
-    <div id="q5-timing" class="step">
+    <!-- Q6-A: 使う予定（まだ手をつけていない） -->
+    <div id="q6-timing" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. いつ頃始める予定ですか？</h2>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q6. いつ頃始める予定ですか？</h2>
       <p class="text-sm text-gray-500 mb-4">一つ選んでください</p>
 
       <div class="education-card bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
@@ -356,35 +417,35 @@
       </div>
 
       <div class="space-y-3">
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="2月中に始めたい" onclick="selectSingle('q5sub', this); showNext('q5-timingNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="2月中に始めたい" onclick="selectSingle('q6sub', this); showNext('q6-timingNext')">
           <span class="text-sm font-medium text-gray-700">2月中に始めたい</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="3月に入ってから" onclick="selectSingle('q5sub', this); showNext('q5-timingNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="3月に入ってから" onclick="selectSingle('q6sub', this); showNext('q6-timingNext')">
           <span class="text-sm font-medium text-gray-700">3月に入ってから</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="ギリギリ（3月10日以降）" onclick="selectSingle('q5sub', this); showNext('q5-timingNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="ギリギリ（3月10日以降）" onclick="selectSingle('q6sub', this); showNext('q6-timingNext')">
           <span class="text-sm font-medium text-gray-700">ギリギリ（3月10日以降）</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="まだ決めていない" onclick="selectSingle('q5sub', this); showNext('q5-timingNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="まだ決めていない" onclick="selectSingle('q6sub', this); showNext('q6-timingNext')">
           <span class="text-sm font-medium text-gray-700">まだ決めていない</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
       </div>
 
-      <div id="q5-timingNext" class="hidden mt-6">
-        <button onclick="goTo('q6')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
+      <div id="q6-timingNext" class="hidden mt-6">
+        <button onclick="goTo('q7')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
           次へ
         </button>
       </div>
     </div>
 
-    <!-- Q5-B: 料金が高い -->
-    <div id="q5-price" class="step">
+    <!-- Q6-B: 料金が高い -->
+    <div id="q6-price" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. 料金について教えてください</h2>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q6. 料金について教えてください</h2>
       <p class="text-sm text-gray-500 mb-4">一つ選んでください</p>
 
       <div class="education-card bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
@@ -398,31 +459,31 @@
       </div>
 
       <div class="space-y-3">
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="無料なのを知らなかった" onclick="selectSingle('q5sub', this); showNext('q5-priceNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="無料なのを知らなかった" onclick="selectSingle('q6sub', this); showNext('q6-priceNext')">
           <span class="flex-1 text-sm font-medium text-gray-700">知らなかった！無料なら試してみたい</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="有料プランの価格が気になる" onclick="selectSingle('q5sub', this); showNext('q5-priceNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="有料プランの価格が気になる" onclick="selectSingle('q6sub', this); showNext('q6-priceNext')">
           <span class="flex-1 text-sm font-medium text-gray-700">知っていたが、最終的に有料になるのが気になる</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="他と比べて高い" onclick="selectSingle('q5sub', this); showNext('q5-priceNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white flex items-center gap-3" data-value="他と比べて高い" onclick="selectSingle('q6sub', this); showNext('q6-priceNext')">
           <span class="flex-1 text-sm font-medium text-gray-700">他のサービスと比べて割高に感じる</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
       </div>
 
-      <div id="q5-priceNext" class="hidden mt-6">
-        <button onclick="goTo('q6')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
+      <div id="q6-priceNext" class="hidden mt-6">
+        <button onclick="goTo('q7')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
           次へ
         </button>
       </div>
     </div>
 
-    <!-- Q5-C: 使い方が難しそう -->
-    <div id="q5-difficulty" class="step">
+    <!-- Q6-C: 使い方が難しそう -->
+    <div id="q6-difficulty" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. どのあたりが難しそうだと感じましたか？</h2>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q6. どのあたりが難しそうだと感じましたか？</h2>
       <p class="text-sm text-gray-500 mb-4">あてはまるものをすべて選んでください</p>
 
       <div class="education-card bg-brand-50 border border-brand-200 rounded-xl p-4 mb-6">
@@ -436,39 +497,39 @@
       </div>
 
       <div class="space-y-3">
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="初期設定・連携" onclick="toggleMulti('q5sub', this); showNext('q5-difficultyNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="初期設定・連携" onclick="toggleMulti('q6sub', this); showNext('q6-difficultyNext')">
           <span class="text-sm font-medium text-gray-700">初期設定や銀行連携</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="経費・収入の入力" onclick="toggleMulti('q5sub', this); showNext('q5-difficultyNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="経費・収入の入力" onclick="toggleMulti('q6sub', this); showNext('q6-difficultyNext')">
           <span class="text-sm font-medium text-gray-700">経費や収入の入力方法</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="書類の作成" onclick="toggleMulti('q5sub', this); showNext('q5-difficultyNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="書類の作成" onclick="toggleMulti('q6sub', this); showNext('q6-difficultyNext')">
           <span class="text-sm font-medium text-gray-700">確定申告の書類作成</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="専門用語" onclick="toggleMulti('q5sub', this); showNext('q5-difficultyNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="専門用語" onclick="toggleMulti('q6sub', this); showNext('q6-difficultyNext')">
           <span class="text-sm font-medium text-gray-700">専門用語が多くてわからない</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="何から始めるか不明" onclick="toggleMulti('q5sub', this); showNext('q5-difficultyNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="何から始めるか不明" onclick="toggleMulti('q6sub', this); showNext('q6-difficultyNext')">
           <span class="text-sm font-medium text-gray-700">そもそも何から始めればいいかわからない</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
       </div>
 
-      <div id="q5-difficultyNext" class="hidden mt-6">
-        <button onclick="goTo('q6')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
+      <div id="q6-difficultyNext" class="hidden mt-6">
+        <button onclick="goTo('q7')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
           次へ
         </button>
       </div>
     </div>
 
-    <!-- Q5-D: 他ツール・税理士の方が良い -->
-    <div id="q5-competitor" class="step">
+    <!-- Q6-D: 他ツール・税理士の方が良い -->
+    <div id="q6-competitor" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. 現在お使い（検討中）のサービスは？</h2>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q6. 現在お使い（検討中）のサービスは？</h2>
       <p class="text-sm text-gray-500 mb-4">一つ選んでください</p>
 
       <div class="education-card bg-orange-50 border border-orange-200 rounded-xl p-4 mb-6">
@@ -481,66 +542,66 @@
         </div>
       </div>
 
-      <div class="space-y-3" id="q5CompOptions">
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="freee" onclick="selectSingle('q5sub', this); showQ5CompSub()">
+      <div class="space-y-3" id="q6CompOptions">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="freee" onclick="selectSingle('q6sub', this); showQ6CompSub()">
           <span class="text-sm font-medium text-gray-700">freee</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="マネーフォワード" onclick="selectSingle('q5sub', this); showQ5CompSub()">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="マネーフォワード" onclick="selectSingle('q6sub', this); showQ6CompSub()">
           <span class="text-sm font-medium text-gray-700">マネーフォワード</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="弥生" onclick="selectSingle('q5sub', this); showQ5CompSub()">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="弥生" onclick="selectSingle('q6sub', this); showQ6CompSub()">
           <span class="text-sm font-medium text-gray-700">弥生（やよいの青色申告など）</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="税理士" onclick="selectSingle('q5sub', this); showQ5CompSub()">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="税理士" onclick="selectSingle('q6sub', this); showQ6CompSub()">
           <span class="text-sm font-medium text-gray-700">税理士</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="e-Tax" onclick="selectSingle('q5sub', this); showQ5CompSub()">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="e-Tax" onclick="selectSingle('q6sub', this); showQ6CompSub()">
           <span class="text-sm font-medium text-gray-700">e-Tax（国税庁サイト）</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="その他のツール" onclick="selectSingle('q5sub', this); showQ5CompSub()">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="その他のツール" onclick="selectSingle('q6sub', this); showQ6CompSub()">
           <span class="text-sm font-medium text-gray-700">その他</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
       </div>
 
-      <div id="q5CompSub" class="hidden mt-6">
+      <div id="q6CompSub" class="hidden mt-6">
         <p class="text-sm font-bold text-gray-900 mb-3">タックスナップに乗り換えない理由は？</p>
-        <div class="space-y-3" id="q5CompSubOptions">
-          <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="データ移行が面倒" onclick="selectSingle('q5sub2', this); showNext('q5-competitorNext')">
+        <div class="space-y-3" id="q6CompSubOptions">
+          <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="データ移行が面倒" onclick="selectSingle('q6sub2', this); showNext('q6-competitorNext')">
             <span class="text-sm font-medium text-gray-700">データ移行が面倒そう</span>
             <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
           </button>
-          <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="今ので満足" onclick="selectSingle('q5sub2', this); showNext('q5-competitorNext')">
+          <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="今ので満足" onclick="selectSingle('q6sub2', this); showNext('q6-competitorNext')">
             <span class="text-sm font-medium text-gray-700">今のツール・税理士で十分満足している</span>
             <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
           </button>
-          <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="比較する時間がない" onclick="selectSingle('q5sub2', this); showNext('q5-competitorNext')">
+          <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="比較する時間がない" onclick="selectSingle('q6sub2', this); showNext('q6-competitorNext')">
             <span class="text-sm font-medium text-gray-700">比較する時間がない</span>
             <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
           </button>
-          <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="契約期間が残っている" onclick="selectSingle('q5sub2', this); showNext('q5-competitorNext')">
+          <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="契約期間が残っている" onclick="selectSingle('q6sub2', this); showNext('q6-competitorNext')">
             <span class="text-sm font-medium text-gray-700">契約期間が残っている</span>
             <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
           </button>
         </div>
       </div>
 
-      <div id="q5-competitorNext" class="hidden mt-6">
-        <button onclick="goTo('q6')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
+      <div id="q6-competitorNext" class="hidden mt-6">
+        <button onclick="goTo('q7')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
           次へ
         </button>
       </div>
     </div>
 
-    <!-- Q5-E: セキュリティ・信頼性が不安 -->
-    <div id="q5-security" class="step">
+    <!-- Q6-E: セキュリティ・信頼性が不安 -->
+    <div id="q6-security" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. 特にどの点が不安でしたか？</h2>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q6. 特にどの点が不安でしたか？</h2>
       <p class="text-sm text-gray-500 mb-4">あてはまるものをすべて選んでください</p>
 
       <div class="education-card bg-indigo-50 border border-indigo-200 rounded-xl p-4 mb-6">
@@ -554,33 +615,33 @@
       </div>
 
       <div class="space-y-3">
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="個人情報の取り扱い" onclick="toggleMulti('q5sub', this); showNext('q5-securityNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="個人情報の取り扱い" onclick="toggleMulti('q6sub', this); showNext('q6-securityNext')">
           <span class="text-sm font-medium text-gray-700">個人情報の取り扱いが不安</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="銀行連携の安全性" onclick="toggleMulti('q5sub', this); showNext('q5-securityNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="銀行連携の安全性" onclick="toggleMulti('q6sub', this); showNext('q6-securityNext')">
           <span class="text-sm font-medium text-gray-700">銀行口座との連携が怖い</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="会社の信頼性" onclick="toggleMulti('q5sub', this); showNext('q5-securityNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="会社の信頼性" onclick="toggleMulti('q6sub', this); showNext('q6-securityNext')">
           <span class="text-sm font-medium text-gray-700">運営会社の実績や信頼性がわからない</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
-        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="データ消失の不安" onclick="toggleMulti('q5sub', this); showNext('q5-securityNext')">
+        <button class="opt-btn w-full text-left px-4 py-3 rounded-xl bg-white" data-value="データ消失の不安" onclick="toggleMulti('q6sub', this); showNext('q6-securityNext')">
           <span class="text-sm font-medium text-gray-700">入力したデータが消えないか不安</span>
           <span class="check-icon w-5 h-5 bg-brand-600 text-white rounded-full items-center justify-center text-xs">✓</span>
         </button>
       </div>
 
-      <div id="q5-securityNext" class="hidden mt-6">
-        <button onclick="goTo('q6')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
+      <div id="q6-securityNext" class="hidden mt-6">
+        <button onclick="goTo('q7')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
           次へ
         </button>
       </div>
     </div>
 
-    <!-- Q5-F: 始め方がわからない / その他 -->
-    <div id="q5-simple" class="step">
+    <!-- Q6-F: 始め方がわからない / その他 -->
+    <div id="q6-simple" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <div class="education-card bg-brand-50 border border-brand-200 rounded-xl p-5 mb-6">
         <div class="flex items-start gap-3">
@@ -595,18 +656,18 @@
         </div>
       </div>
 
-      <button onclick="goTo('q6')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
+      <button onclick="goTo('q7')" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
         次へ（最後の質問）
       </button>
     </div>
 
-    <!-- ========== Q6: 自由記述 ========== -->
-    <div id="q6" class="step">
+    <!-- ========== Q7: 自由記述 ========== -->
+    <div id="q7" class="step">
       <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
-      <h2 class="text-xl font-bold text-gray-900 mb-1">Q6. 最後に、ご意見があれば教えてください</h2>
+      <h2 class="text-xl font-bold text-gray-900 mb-1">Q7. 最後に、ご意見があれば教えてください</h2>
       <p class="text-sm text-gray-500 mb-6">任意（スキップOK）</p>
 
-      <textarea id="q6Text" rows="4" placeholder="「これがあったら使いたい」「ここが不安」など、何でもお気軽にどうぞ"
+      <textarea id="q7Text" rows="4" placeholder="「これがあったら使いたい」「ここが不安」など、何でもお気軽にどうぞ"
         class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:border-brand-500 focus:outline-none resize-none"></textarea>
 
       <button onclick="submitSurvey()" class="w-full mt-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl transition">
@@ -647,7 +708,7 @@
 
       <!-- Lottery -->
       <div class="incentive-highlight rounded-xl p-4 mb-4">
-        <p class="text-sm font-bold text-amber-900">🎁 抽選で10名様にAmazonギフト券1,000円分</p>
+        <p class="text-sm font-bold text-amber-900">🎁 抽選で30名様にAmazonギフト券1,000円分</p>
         <p class="text-xs text-amber-700 mt-1">※ 当選発表はメール送付をもって代えさせていただきます</p>
       </div>
 
@@ -665,16 +726,23 @@
   </main>
 
   <script>
+    // ===== Get email from URL param =====
+    const urlParams = new URLSearchParams(window.location.search);
+    const userEmail = urlParams.get('email') || '';
+
     // ===== State =====
-    const answers = { q1_job: '', q2_status: '', q3_motivation: '', q4_barrier: '', q5sub: '', q5sub2: '', q6_freetext: '' };
+    const answers = {
+      q1_job: '', q2_channel: '', q3_status: '', q4_motivation: '',
+      q5_barrier: '', q6sub: '', q6sub2: '', q7_freetext: ''
+    };
     let currentStep = 'intro';
-    const history = [];
+    const navHistory = [];
 
     // ===== GAS Web App URL =====
     const GAS_URL = 'YOUR_GAS_WEB_APP_URL_HERE';
 
     // ===== Step navigation =====
-    const totalSteps = 6;
+    const totalSteps = 7;
 
     function getStepNumber(stepId) {
       if (stepId === 'intro') return 0;
@@ -682,20 +750,21 @@
       if (stepId === 'q2') return 2;
       if (stepId === 'q3') return 3;
       if (stepId === 'q4') return 4;
-      if (stepId.startsWith('q5')) return 5;
-      if (stepId === 'q6') return 6;
-      if (stepId === 'complete') return 7;
+      if (stepId === 'q5') return 5;
+      if (stepId.startsWith('q6')) return 6;
+      if (stepId === 'q7') return 7;
+      if (stepId === 'complete') return 8;
       return 0;
     }
 
     function goTo(nextId) {
-      history.push(currentStep);
+      navHistory.push(currentStep);
       transition(nextId);
     }
 
     function goBack() {
-      if (history.length === 0) return;
-      const prevId = history.pop();
+      if (navHistory.length === 0) return;
+      const prevId = navHistory.pop();
       transition(prevId);
     }
 
@@ -761,54 +830,54 @@
       });
     }
 
-    // ===== Q4: Barrier selection =====
+    // ===== Q5: Barrier selection =====
     function selectBarrier(btn) {
-      document.querySelectorAll('#q4Options .opt-btn').forEach(b => b.classList.remove('selected'));
+      document.querySelectorAll('#q5Options .opt-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
       const val = btn.dataset.value;
-      answers.q4_barrier = val;
+      answers.q5_barrier = val;
 
-      const otherInput = document.getElementById('q4OtherInput');
+      const otherInput = document.getElementById('q5OtherInput');
       if (val === 'その他') {
         otherInput.classList.remove('hidden');
-        document.getElementById('q4OtherText').focus();
+        document.getElementById('q5OtherText').focus();
       } else {
         otherInput.classList.add('hidden');
       }
 
-      showNext('q4Next');
+      showNext('q5Next');
     }
 
-    // ===== Q4 → Q5 routing =====
-    const barrierToQ5 = {
-      '使う予定': 'q5-timing',
-      '料金が高い': 'q5-price',
-      '難しそう': 'q5-difficulty',
-      '他ツールの方が良い': 'q5-competitor',
-      '始め方がわからない': 'q5-simple',
-      'セキュリティ不安': 'q5-security',
-      'その他': 'q5-simple',
+    // ===== Q5 → Q6 routing =====
+    const barrierToQ6 = {
+      '使う予定': 'q6-timing',
+      '料金が高い': 'q6-price',
+      '難しそう': 'q6-difficulty',
+      '他ツールの方が良い': 'q6-competitor',
+      '始め方がわからない': 'q6-simple',
+      'セキュリティ不安': 'q6-security',
+      'その他': 'q6-simple',
     };
 
-    function goToQ5() {
+    function goToQ6() {
       // Handle Q1 other text
       if (answers.q1_job === 'その他') {
         const otherText = document.getElementById('q1OtherText').value.trim();
         if (otherText) answers.q1_job = 'その他: ' + otherText;
       }
-      // Handle Q4 other text
-      if (answers.q4_barrier === 'その他') {
-        const otherText = document.getElementById('q4OtherText').value.trim();
-        if (otherText) answers.q4_barrier = 'その他: ' + otherText;
+      // Handle Q5 other text
+      if (answers.q5_barrier === 'その他') {
+        const otherText = document.getElementById('q5OtherText').value.trim();
+        if (otherText) answers.q5_barrier = 'その他: ' + otherText;
       }
-      const key = answers.q4_barrier.startsWith('その他') ? 'その他' : answers.q4_barrier;
-      const target = barrierToQ5[key] || 'q5-simple';
+      const key = answers.q5_barrier.startsWith('その他') ? 'その他' : answers.q5_barrier;
+      const target = barrierToQ6[key] || 'q6-simple';
       goTo(target);
     }
 
-    // ===== Q5-competitor sub =====
-    function showQ5CompSub() {
-      document.getElementById('q5CompSub').classList.remove('hidden');
+    // ===== Q6-competitor sub =====
+    function showQ6CompSub() {
+      document.getElementById('q6CompSub').classList.remove('hidden');
     }
 
     // ===== Completion screen CTA =====
@@ -840,7 +909,7 @@
     };
 
     function updateCompletionScreen() {
-      const key = answers.q4_barrier.startsWith('その他') ? '始め方がわからない' : answers.q4_barrier;
+      const key = answers.q5_barrier.startsWith('その他') ? '始め方がわからない' : answers.q5_barrier;
       const cta = barrierCta[key] || barrierCta['始め方がわからない'];
       document.getElementById('completeCtaTitle').textContent = cta.title;
       document.getElementById('completeCtaText').textContent = cta.text;
@@ -848,17 +917,19 @@
 
     // ===== Submit =====
     async function submitSurvey() {
-      answers.q6_freetext = document.getElementById('q6Text').value.trim();
+      answers.q7_freetext = document.getElementById('q7Text').value.trim();
 
       const payload = {
         timestamp: new Date().toISOString(),
+        email: userEmail,
         q1_job: answers.q1_job,
-        q2_status: answers.q2_status,
-        q3_motivation: answers.q3_motivation,
-        q4_barrier: answers.q4_barrier,
-        q5_detail: Array.isArray(answers.q5sub) ? answers.q5sub.join(', ') : (answers.q5sub || ''),
-        q5_competitor_reason: answers.q5sub2 || '',
-        q6_freetext: answers.q6_freetext,
+        q2_channel: answers.q2_channel,
+        q3_status: answers.q3_status,
+        q4_motivation: answers.q4_motivation,
+        q5_barrier: answers.q5_barrier,
+        q6_detail: Array.isArray(answers.q6sub) ? answers.q6sub.join(', ') : (answers.q6sub || ''),
+        q6_competitor_reason: answers.q6sub2 || '',
+        q7_freetext: answers.q7_freetext,
         user_agent: navigator.userAgent
       };
 
