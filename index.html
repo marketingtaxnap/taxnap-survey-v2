@@ -105,44 +105,58 @@
 
     <!-- ========== INTRO ========== -->
     <div id="intro" class="step active">
-      <div class="text-center mb-8">
-        <img src="snappy.png" alt="スナッピー" loading="eager" class="w-24 h-24 mx-auto mb-3 object-contain snappy-bounce">
-        <h1 class="text-2xl font-bold text-gray-900 mb-2">2分で完了するアンケート</h1>
+      <!-- Hero section with gradient background -->
+      <div class="bg-gradient-to-b from-brand-50 to-white rounded-2xl p-6 mb-5 text-center relative overflow-hidden">
+        <div class="absolute top-3 left-4 text-2xl opacity-20 rotate-[-15deg]">📝</div>
+        <div class="absolute top-2 right-5 text-xl opacity-20 rotate-[10deg]">✨</div>
+        <div class="absolute bottom-4 right-3 text-lg opacity-15 rotate-[20deg]">💬</div>
+
+        <img src="snappy.png" alt="スナッピー" loading="eager" class="w-28 h-28 mx-auto mb-2 object-contain snappy-bounce relative z-10">
+
+        <!-- Speech bubble -->
+        <div class="inline-block bg-white rounded-2xl rounded-bl-sm shadow-sm px-4 py-2 mb-4 relative">
+          <p class="text-sm font-bold text-brand-700">あなたの声を聞かせてください!</p>
+          <div class="absolute -bottom-1.5 left-6 w-3 h-3 bg-white rotate-45 shadow-sm"></div>
+        </div>
+
+        <h1 class="text-2xl font-bold text-gray-900 mb-1">かんたん2分アンケート</h1>
         <p class="text-gray-500 text-sm leading-relaxed">
-          タックスナップをもっと良くするため<br>率直なご意見を聞かせてください
+          タックスナップをもっと良くするために<br>ぜひご協力ください
         </p>
       </div>
 
-      <!-- Incentive -->
-      <div class="mb-8">
-        <div class="incentive-highlight rounded-xl p-4">
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">🎁</span>
-            <div>
-              <p class="text-sm font-bold text-amber-900">回答者の中から抽選で30名様に</p>
-              <p class="text-xs text-amber-800 font-semibold">Amazonギフト券1,000円分をプレゼント</p>
-            </div>
+      <!-- Incentive - bigger and more eye-catching -->
+      <div class="mb-5">
+        <div class="incentive-highlight rounded-xl p-4 flex items-center gap-4">
+          <span class="text-4xl">🎁</span>
+          <div>
+            <p class="text-base font-bold text-amber-900">抽選で30名様に</p>
+            <p class="text-sm font-bold text-amber-800">Amazonギフト券 <span class="text-lg text-red-600">1,000円分</span></p>
           </div>
         </div>
       </div>
 
-      <div class="space-y-3 mb-8">
-        <div class="flex items-start gap-3 text-sm text-gray-600">
-          <span class="flex-shrink-0 w-6 h-6 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center text-xs font-bold">1</span>
-          <span>かんたんな質問に答えるだけ（2分）</span>
+      <!-- Steps - card style -->
+      <div class="space-y-2.5 mb-6">
+        <div class="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+          <span class="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+          <span class="text-sm font-medium text-gray-700">タップで質問に答えるだけ</span>
+          <span class="ml-auto text-xs text-brand-600 font-bold bg-brand-50 px-2 py-0.5 rounded-full">2分</span>
         </div>
-        <div class="flex items-start gap-3 text-sm text-gray-600">
-          <span class="flex-shrink-0 w-6 h-6 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center text-xs font-bold">2</span>
-          <span>あなたに合った情報をその場でお届け</span>
+        <div class="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+          <span class="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+          <span class="text-sm font-medium text-gray-700">あなたに合った情報をお届け</span>
+          <span class="ml-auto text-lg">💡</span>
         </div>
-        <div class="flex items-start gap-3 text-sm text-gray-600">
-          <span class="flex-shrink-0 w-6 h-6 bg-brand-100 text-brand-700 rounded-full flex items-center justify-center text-xs font-bold">3</span>
-          <span>抽選でギフト券1,000円分が当たる</span>
+        <div class="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100">
+          <span class="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+          <span class="text-sm font-medium text-gray-700">抽選でギフト券が当たる!</span>
+          <span class="ml-auto text-lg">🎉</span>
         </div>
       </div>
 
-      <button onclick="startSurvey()" class="w-full py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-lg transition">
-        始める
+      <button onclick="startSurvey()" class="w-full py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl text-lg transition shadow-lg shadow-brand-200 active:scale-[0.98]">
+        アンケートに答える
       </button>
       <p class="text-center text-xs text-gray-400 mt-3">回答は匿名で処理されます</p>
     </div>
