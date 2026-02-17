@@ -706,37 +706,56 @@
 
     <!-- ========== COMPLETE ========== -->
     <div id="complete" class="step">
-      <div class="text-center mb-6">
-        <img src="snappy.png" alt="スナッピー" loading="eager" class="w-20 h-20 mx-auto mb-3 object-contain snappy-bounce">
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">ありがとうございました！</h2>
-        <p class="text-sm text-gray-500">ご回答を受け付けました</p>
+      <!-- Thank you hero -->
+      <div class="bg-gradient-to-b from-brand-50 to-white rounded-2xl p-6 mb-5 text-center relative overflow-hidden">
+        <div class="absolute top-3 left-4 text-2xl opacity-20 rotate-[-10deg]">🎉</div>
+        <div class="absolute top-2 right-5 text-xl opacity-20 rotate-[15deg]">✨</div>
+        <div class="absolute bottom-3 right-4 text-lg opacity-15 rotate-[20deg]">🙏</div>
+
+        <img src="snappy.png" alt="スナッピー" loading="eager" class="w-24 h-24 mx-auto mb-2 object-contain snappy-bounce relative z-10">
+
+        <!-- Speech bubble -->
+        <div class="inline-block bg-white rounded-2xl rounded-bl-sm shadow-sm px-4 py-2 mb-3 relative">
+          <p class="text-sm font-bold text-brand-700">ご協力ありがとうございます!</p>
+          <div class="absolute -bottom-1.5 left-6 w-3 h-3 bg-white rotate-45 shadow-sm"></div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-1">回答を受け付けました</h2>
+        <p class="text-sm text-gray-500">あなたの声がサービス改善に役立ちます</p>
       </div>
 
       <!-- Campaign CTA -->
-      <div class="bg-gradient-to-br from-brand-600 to-brand-700 rounded-xl p-5 mb-4 text-white">
-        <p class="text-xs font-bold tracking-wide opacity-80 mb-1">🎉 確定申告キャンペーン中！</p>
-        <p class="text-lg font-bold mb-1">今なら3月16日まで無料でトライアル！</p>
-        <p class="text-xs opacity-80 mb-1">レシート撮影・仕訳・申告書作成がすべて無料</p>
-        <p class="text-xs opacity-60 mb-4">※ 確定申告の提出・書類のエクスポートの際に料金が発生します</p>
-        <button onclick="openTaxSnap()"
-          class="w-full py-3 bg-white text-brand-700 text-sm font-bold rounded-lg text-center hover:bg-gray-50 transition shadow-lg">
-          タックスナップを開く
-        </button>
+      <div class="bg-gradient-to-br from-brand-600 to-brand-700 rounded-2xl p-5 mb-4 text-white relative overflow-hidden shadow-lg shadow-brand-200">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-8 translate-x-8"></div>
+        <div class="absolute bottom-0 left-0 w-16 h-16 bg-white/5 rounded-full translate-y-6 -translate-x-6"></div>
+        <div class="relative z-10">
+          <p class="text-xs font-bold tracking-wide opacity-90 mb-1">🎉 確定申告キャンペーン中！</p>
+          <p class="text-xl font-bold mb-1">3月16日まで無料トライアル!</p>
+          <p class="text-xs opacity-80 mb-1">レシート撮影・仕訳・申告書作成がすべて無料</p>
+          <p class="text-xs opacity-60 mb-4">※ 確定申告の提出・書類のエクスポートの際に料金が発生します</p>
+          <button onclick="openTaxSnap()"
+            class="w-full py-3.5 bg-white text-brand-700 text-sm font-bold rounded-xl text-center hover:bg-gray-50 transition shadow-lg active:scale-[0.98]">
+            タックスナップを開く →
+          </button>
+        </div>
       </div>
 
       <!-- Barrier-specific CTA -->
-      <div id="completeCta" class="bg-brand-50 border-2 border-brand-300 rounded-xl p-5 mb-4">
+      <div id="completeCta" class="bg-white border border-gray-100 rounded-2xl p-5 mb-4 shadow-sm">
         <p class="text-sm font-bold text-brand-900 mb-2" id="completeCtaTitle"></p>
-        <p class="text-sm text-brand-800 leading-relaxed" id="completeCtaText"></p>
+        <p class="text-sm text-gray-600 leading-relaxed" id="completeCtaText"></p>
       </div>
 
       <!-- Lottery -->
-      <div class="incentive-highlight rounded-xl p-4 mb-4">
-        <p class="text-sm font-bold text-amber-900">🎁 抽選で30名様にAmazonギフト券1,000円分</p>
-        <p class="text-xs text-amber-700 mt-1">※ 当選発表はメール送付をもって代えさせていただきます</p>
+      <div class="incentive-highlight rounded-2xl p-4 mb-4 flex items-center gap-4">
+        <span class="text-3xl">🎁</span>
+        <div>
+          <p class="text-sm font-bold text-amber-900">抽選で30名様にギフト券 <span class="text-red-600">1,000円分</span></p>
+          <p class="text-xs text-amber-700 mt-0.5">当選発表はメール送付をもって代えさせていただきます</p>
+        </div>
       </div>
 
-      <p class="text-center text-xs text-gray-400 mt-6">ご質問は <a href="mailto:support@taxnap.com" class="underline">support@taxnap.com</a> まで</p>
+      <p class="text-center text-xs text-gray-400 mt-6">ご質問は <a href="mailto:support@taxnap.com" class="underline hover:text-gray-600 transition">support@taxnap.com</a> まで</p>
     </div>
 
     <!-- Loading overlay -->
