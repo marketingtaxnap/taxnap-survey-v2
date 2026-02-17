@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>タックスナップ アンケート</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -111,7 +112,7 @@
         <div class="absolute top-2 right-5 text-xl opacity-20 rotate-[10deg]">✨</div>
         <div class="absolute bottom-4 right-3 text-lg opacity-15 rotate-[20deg]">💬</div>
 
-        <img src="snappy.png" alt="スナッピー" loading="eager" class="w-28 h-28 mx-auto mb-2 object-contain snappy-bounce relative z-10">
+        <canvas id="snappyIntro" width="224" height="224" class="w-28 h-28 mx-auto mb-2 relative z-10"></canvas>
 
         <!-- Speech bubble -->
         <div class="inline-block bg-white rounded-2xl rounded-bl-sm shadow-sm px-4 py-2 mb-4 relative">
@@ -712,7 +713,7 @@
         <div class="absolute top-2 right-5 text-xl opacity-20 rotate-[15deg]">✨</div>
         <div class="absolute bottom-3 right-4 text-lg opacity-15 rotate-[20deg]">🙏</div>
 
-        <img src="snappy.png" alt="スナッピー" loading="eager" class="w-24 h-24 mx-auto mb-2 object-contain snappy-bounce relative z-10">
+        <canvas id="snappyComplete" width="192" height="192" class="w-24 h-24 mx-auto mb-2 relative z-10"></canvas>
 
         <!-- Speech bubble -->
         <div class="inline-block bg-white rounded-2xl rounded-bl-sm shadow-sm px-4 py-2 mb-3 relative">
@@ -1034,6 +1035,42 @@
       updateCompletionScreen();
       goTo('complete');
     }
+
+    // ===== Reset all selections on page load (prevent browser cache restore) =====
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) {
+        // bfcache restore - full reset
+        document.querySelectorAll('.opt-btn.selected').forEach(function(btn) {
+          btn.classList.remove('selected');
+        });
+        // Re-hide all "Next" buttons
+        document.querySelectorAll('[id$="Next"]').forEach(function(el) {
+          if (el.id !== 'q1Next' || true) el.classList.add('hidden');
+        });
+        // Reset state
+        Object.keys(answers).forEach(function(k) { answers[k] = ''; });
+        currentStep = 'intro';
+        navHistory.length = 0;
+        // Show intro only
+        document.querySelectorAll('.step').forEach(function(s) {
+          s.classList.remove('active', 'exit');
+        });
+        document.getElementById('intro').classList.add('active');
+        updateProgress();
+      }
+    });
+
+    // ===== Rive animation =====
+    function initRive(canvasId) {
+      new rive.Rive({
+        src: 'happy.riv',
+        canvas: document.getElementById(canvasId),
+        autoplay: true,
+        fit: rive.Fit.Contain,
+      });
+    }
+    initRive('snappyIntro');
+    initRive('snappyComplete');
   </script>
 
 </body>
