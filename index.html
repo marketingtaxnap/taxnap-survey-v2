@@ -453,7 +453,7 @@
           <span class="text-2xl">💡</span>
           <div>
             <p class="text-sm font-bold text-blue-900 mb-1">ご存知でしたか？</p>
-            <p class="text-sm text-blue-800 leading-relaxed">タックスナップは<strong>確定申告を提出する直前まで完全無料</strong>です。何枚レシートを撮っても、何ヶ月使っても0円。いつでもキャンセルできます。</p>
+            <p class="text-sm text-blue-800 leading-relaxed">タックスナップは<strong>3月16日まで完全無料</strong>でお使いいただけます。レシート撮影も仕訳もすべて無料。いつでもキャンセルできます。</p>
           </div>
         </div>
       </div>
@@ -651,7 +651,7 @@
             <p class="text-sm text-brand-800 leading-relaxed mb-1">1. アプリを開く</p>
             <p class="text-sm text-brand-800 leading-relaxed mb-1">2. レシートを1枚撮る</p>
             <p class="text-sm text-brand-800 leading-relaxed">3. AIが自動で仕訳完了！</p>
-            <p class="text-xs text-brand-600 mt-2">提出直前まで完全無料。初期設定も不要です。</p>
+            <p class="text-xs text-brand-600 mt-2">3月16日まで完全無料。初期設定も不要です。</p>
           </div>
         </div>
       </div>
@@ -690,20 +690,21 @@
         <p class="text-sm text-gray-500">ご回答を受け付けました</p>
       </div>
 
+      <!-- Campaign CTA -->
+      <div class="bg-gradient-to-br from-brand-600 to-brand-700 rounded-xl p-5 mb-4 text-white">
+        <p class="text-xs font-bold tracking-wide opacity-80 mb-1">🎉 確定申告キャンペーン中！</p>
+        <p class="text-lg font-bold mb-1">今なら3月16日まで無料でトライアル！</p>
+        <p class="text-xs opacity-80 mb-4">レシート撮影・仕訳・申告書作成がすべて無料</p>
+        <button onclick="openTaxSnap()"
+          class="w-full py-3 bg-white text-brand-700 text-sm font-bold rounded-lg text-center hover:bg-gray-50 transition shadow-lg">
+          タックスナップを開く
+        </button>
+      </div>
+
       <!-- Barrier-specific CTA -->
       <div id="completeCta" class="bg-brand-50 border-2 border-brand-300 rounded-xl p-5 mb-4">
         <p class="text-sm font-bold text-brand-900 mb-2" id="completeCtaTitle"></p>
-        <p class="text-sm text-brand-800 mb-4 leading-relaxed" id="completeCtaText"></p>
-        <div class="flex gap-3">
-          <a href="https://apps.apple.com/app/taxnap" target="_blank"
-            class="flex-1 py-3 bg-gray-900 text-white text-sm font-bold rounded-lg text-center hover:bg-gray-800 transition">
-            App Store
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=com.taxnap" target="_blank"
-            class="flex-1 py-3 bg-brand-600 text-white text-sm font-bold rounded-lg text-center hover:bg-brand-700 transition">
-            Google Play
-          </a>
-        </div>
+        <p class="text-sm text-brand-800 leading-relaxed" id="completeCtaText"></p>
       </div>
 
       <!-- Lottery -->
@@ -880,6 +881,25 @@
       document.getElementById('q6CompSub').classList.remove('hidden');
     }
 
+    // ===== Deep link =====
+    function openTaxSnap() {
+      const deepLink = 'taxnap:///sorting';
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      const iosStore = 'https://apps.apple.com/app/taxnap';
+      const androidStore = 'https://play.google.com/store/apps/details?id=com.taxnap';
+      const storeUrl = isAndroid ? androidStore : iosStore;
+
+      // Try deep link first
+      window.location.href = deepLink;
+
+      // If still on page after 1.5s, app not installed → go to store
+      setTimeout(() => {
+        if (!document.hidden) {
+          window.location.href = storeUrl;
+        }
+      }, 1500);
+    }
+
     // ===== Completion screen CTA =====
     const barrierCta = {
       '使う予定': {
@@ -887,8 +907,8 @@
         text: '1日10分、レシートを撮り溜めるだけ。確定申告時期にはもう準備完了です。'
       },
       '料金が高い': {
-        title: '💰 提出直前まで完全無料です',
-        text: '何枚レシートを撮っても、何ヶ月使っても0円。まずは1枚撮ってみませんか？'
+        title: '💰 3月16日まで完全無料です',
+        text: 'レシート撮影も仕訳もすべて無料。まずは1枚撮ってみませんか？'
       },
       '難しそう': {
         title: '📸 会計知識ゼロでOK。サポートも充実',
@@ -896,7 +916,7 @@
       },
       '他ツールの方が良い': {
         title: '⭐ App Store評価4.6・確定申告アプリNo.1',
-        text: '最速1時間で確定申告が完了。提出直前まで無料なのでリスクゼロで比較できます。'
+        text: '最速1時間で確定申告が完了。3月16日まで無料なのでリスクゼロで比較できます。'
       },
       '始め方がわからない': {
         title: '🚀 ここから3分で始められます',
