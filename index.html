@@ -145,6 +145,7 @@
 
     <!-- ========== Q1: 職種 ========== -->
     <div id="q1" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q1. あなたのお仕事は？</h2>
       <p class="text-sm text-gray-500 mb-6">一つ選んでください</p>
 
@@ -200,6 +201,7 @@
 
     <!-- ========== Q2: 確定申告の現在地 ========== -->
     <div id="q2" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q2. 今年の確定申告、どうする予定ですか？</h2>
       <p class="text-sm text-gray-500 mb-6">一つ選んでください</p>
 
@@ -245,6 +247,7 @@
 
     <!-- ========== Q3: 登録モチベーション ========== -->
     <div id="q3" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q3. タックスナップに登録した理由は？</h2>
       <p class="text-sm text-gray-500 mb-6">一番近いものを一つ選んでください</p>
 
@@ -280,6 +283,7 @@
 
     <!-- ========== Q4: コアバリア ========== -->
     <div id="q4" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q4. トライアルをまだ始めていない一番の理由は？</h2>
       <p class="text-sm text-gray-500 mb-6">一番近いものを一つ選んでください</p>
 
@@ -337,6 +341,7 @@
 
     <!-- Q5-A: 使う予定（まだ手をつけていない） -->
     <div id="q5-timing" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. いつ頃始める予定ですか？</h2>
       <p class="text-sm text-gray-500 mb-4">一つ選んでください</p>
 
@@ -378,6 +383,7 @@
 
     <!-- Q5-B: 料金が高い -->
     <div id="q5-price" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. 料金について教えてください</h2>
       <p class="text-sm text-gray-500 mb-4">一つ選んでください</p>
 
@@ -415,6 +421,7 @@
 
     <!-- Q5-C: 使い方が難しそう -->
     <div id="q5-difficulty" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. どのあたりが難しそうだと感じましたか？</h2>
       <p class="text-sm text-gray-500 mb-4">あてはまるものをすべて選んでください</p>
 
@@ -460,6 +467,7 @@
 
     <!-- Q5-D: 他ツール・税理士の方が良い -->
     <div id="q5-competitor" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. 現在お使い（検討中）のサービスは？</h2>
       <p class="text-sm text-gray-500 mb-4">一つ選んでください</p>
 
@@ -531,6 +539,7 @@
 
     <!-- Q5-E: セキュリティ・信頼性が不安 -->
     <div id="q5-security" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q5. 特にどの点が不安でしたか？</h2>
       <p class="text-sm text-gray-500 mb-4">あてはまるものをすべて選んでください</p>
 
@@ -572,6 +581,7 @@
 
     <!-- Q5-F: 始め方がわからない / その他 -->
     <div id="q5-simple" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <div class="education-card bg-brand-50 border border-brand-200 rounded-xl p-5 mb-6">
         <div class="flex items-start gap-3">
           <span class="text-2xl">🚀</span>
@@ -592,6 +602,7 @@
 
     <!-- ========== Q6: 自由記述 ========== -->
     <div id="q6" class="step">
+      <button onclick="goBack()" class="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 mb-4 transition">← 戻る</button>
       <h2 class="text-xl font-bold text-gray-900 mb-1">Q6. 最後に、ご意見があれば教えてください</h2>
       <p class="text-sm text-gray-500 mb-6">任意（スキップOK）</p>
 
@@ -657,6 +668,7 @@
     // ===== State =====
     const answers = { q1_job: '', q2_status: '', q3_motivation: '', q4_barrier: '', q5sub: '', q5sub2: '', q6_freetext: '' };
     let currentStep = 'intro';
+    const history = [];
 
     // ===== GAS Web App URL =====
     const GAS_URL = 'YOUR_GAS_WEB_APP_URL_HERE';
@@ -677,6 +689,17 @@
     }
 
     function goTo(nextId) {
+      history.push(currentStep);
+      transition(nextId);
+    }
+
+    function goBack() {
+      if (history.length === 0) return;
+      const prevId = history.pop();
+      transition(prevId);
+    }
+
+    function transition(nextId) {
       const currentEl = document.getElementById(currentStep);
       const nextEl = document.getElementById(nextId);
 
